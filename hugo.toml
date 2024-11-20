@@ -2,3 +2,29 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'blogLuis'
 theme = 'congo'
+
+[menu]
+  [[menu.main]]
+    name = "Inicio"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Markdown"
+    url = "/markdown-explanation/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Galería de Imágenes"
+    url = "/image-gallery/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Canales de TV"
+    url = "/tv-channels/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Contenido de Programación"
+    url = "/programming-content/"
+    weight = 5
