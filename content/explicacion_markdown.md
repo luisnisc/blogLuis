@@ -204,4 +204,3 @@ Puedes insertar videos de YouTube utilizando el shortcode `youtube`.
 
 Y se verá así:
 {{<youtube dQw4w9WgXcQ >}}
-
