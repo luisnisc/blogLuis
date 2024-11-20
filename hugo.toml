@@ -11,20 +11,20 @@ theme = 'congo'
 
   [[menu.main]]
     name = "Markdown"
-    url = "/markdown-explanation/"
+    url = "/explicacion_markdown/"
     weight = 2
 
   [[menu.main]]
     name = "Galería de Imágenes"
-    url = "/image-gallery/"
+    url = "/galeria_imagenes/"
     weight = 3
 
   [[menu.main]]
     name = "Canales de TV"
-    url = "/tv-channels/"
+    url = "/canales_tv/"
     weight = 4
 
   [[menu.main]]
     name = "Contenido de Programación"
-    url = "/programming-content/"
+    url = "/conteido_programacion/"
     weight = 5

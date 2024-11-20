@@ -4,6 +4,34 @@
   
     
       <url>
+            <loc>http://localhost:1313/canales_tv/</loc>
+            <lastmod>2024-11-20T16:46:48+01:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/contenido_programacion/</loc>
+            <lastmod>2024-11-20T16:46:48+01:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/galeria_imagenes/</loc>
+            <lastmod>2024-11-20T16:46:48+01:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/explicacion_markdown/</loc>
+            <lastmod>2024-11-20T16:46:47+01:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
             <loc>http://localhost:1313/</loc>
             <lastmod>2024-11-20T16:17:18+01:00</lastmod>
           </url>
