@@ -1,0 +1,107 @@
+<select id="tipoCanal" onchange="filterChannels()">
+  <option value="Generalistas">Generalistas</option>
+  <option value="Informativos">Informativos</option>
+  <option value="Deportivos">Deportivos</option>
+  <option value="Infantiles">Infantiles</option>
+  <option value="Eventuales">Eventuales</option>
+  <option value="Andalucía">Andalucía</option>
+  <option value="Aragón">Aragón</option>
+  <option value="Canarias">Canarias</option>
+  <option value="Cantabria">Cantabria</option>
+  <option value="Castilla-La Mancha">Castilla-La Mancha</option>
+  <option value="Castilla y León">Castilla y León</option>
+  <option value="Cataluña">Cataluña</option>
+  <option value="Ceuta">Ceuta</option>
+  <option value="C. de Madrid">C. de Madrid</option>
+  <option value="C. Foral de Navarra">C. Foral de Navarra</option>
+  <option value="C. Valenciana">C. Valenciana</option>
+  <option value="Extremadura">Extremadura</option>
+  <option value="Galicia">Galicia</option>
+  <option value="Illes Balears">Illes Balears</option>
+  <option value="La Rioja">La Rioja</option>
+  <option value="Melilla">Melilla</option>
+  <option value="País Vasco">País Vasco</option>
+  <option value="P. de Asturias">P. de Asturias</option>
+  <option value="R. de Murcia">R. de Murcia</option>
+</select>
+
+<div id="channelsContainer">
+  {{ $tv := .Site.Data.tv }}
+  {{ range $tv }}
+    <div class="channel-group" data-type="{{ .name }}">
+      <h2>{{ .name }}</h2>
+      <div class="tv-grid">
+        {{ range .channels }}
+          <div class="canal">
+            <img src="{{ .logo }}" alt="{{ .name }}">
+            <h3>{{ .name }}</h3>
+            {{ if .web }}
+              <a href="{{ .web }}" target="_blank">Ver online</a>
+            {{ end }}
+            {{ if .options }}
+              <div class="streams">
+                {{ range .options }}
+                  {{ if .url }}
+                    <a href="{{ .url }}" class="stream">Stream {{ .format }}</a>
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</div>
+
+<script>
+  function filterChannels() {
+    var selectedType = document.getElementById('tipoCanal').value;
+    var groups = document.querySelectorAll('.channel-group');
+    groups.forEach(function(group) {
+      if (group.getAttribute('data-type') === selectedType) {
+        group.style.display = 'block';
+      } else {
+        group.style.display = 'none';
+      }
+    });
+  }
+
+  // Initialize with the first option selected
+  document.addEventListener('DOMContentLoaded', function() {
+    filterChannels();
+  });
+</script>
+
+<style>
+.tv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.canal {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+.canal img {
+  max-width: 100px;
+  height: auto;
+}
+.streams {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.stream {
+  padding: 0.25rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.channelType {
+    color: black;
+}
+</style>
