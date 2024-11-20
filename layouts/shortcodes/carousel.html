@@ -1,59 +1,97 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carousel Aislado</title>
+</head>
+<body>
+  <div id="carouselHost"></div>
 
-<style>
-  .carousel-inner img {
-    width: 100%;
-    height: 400px; 
-    object-fit: cover;
-  }
-</style>
+  <script>
+    // Crear un shadow root
+    const carouselHost = document.getElementById('carouselHost');
+    const shadow = carouselHost.attachShadow({ mode: 'open' });
 
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/imagenes/pueblo1.jpg" class="d-block w-100" alt="Imagen 1" />
-    </div>
-    <div class="carousel-item">
-      <img src="/imagenes/pueblo2.jpg" class="d-block w-100" alt="Imagen 2" />
-    </div>
-    <div class="carousel-item">
-      <img src="/imagenes/pueblo3.jpg" class="d-block w-100" alt="Imagen 3" />
-    </div>
-    <div class="carousel-item">
-      <img src="/imagenes/pueblo4.jpg" class="d-block w-100" alt="Imagen 4" />
-    </div>
-    <div class="carousel-item">
-      <img src="/imagenes/pueblo5.jpg" class="d-block w-100" alt="Imagen 5" />
-    </div>
-    <div class="carousel-item">
-      <img src="/imagenes/pueblo6.jpg" class="d-block w-100" alt="Imagen 6" />
-    </div>
-    <div class="carousel-item">
-      <img src="/imagenes/pueblo7.jpg" class="d-block w-100" alt="Imagen 7" />
-    </div>
-    <div class="carousel-item">
-      <img src="/imagenes/pueblo8.jpg" class="d-block w-100" alt="Imagen 8" />
-    </div>
-  </div>
+    // Agregar el enlace de Bootstrap al shadow DOM
+    const linkBootstrap = document.createElement('link');
+    linkBootstrap.setAttribute('rel', 'stylesheet');
+    linkBootstrap.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+    shadow.appendChild(linkBootstrap);
 
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExample"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Anterior</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExample"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Siguiente</span>
-  </button>
-</div>
+    // Agregar estilos personalizados
+    const style = document.createElement('style');
+    style.textContent = `
+      .carousel-inner img {
+        width: 100%;
+        height: 400px; 
+        object-fit: cover;
+      }
+    `;
+    shadow.appendChild(style);
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    // Agregar el HTML del carousel al shadow DOM
+    shadow.innerHTML += `
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/imagenes/pueblo1.jpg" class="d-block w-100" alt="Imagen 1" />
+          </div>
+          <div class="carousel-item">
+            <img src="/imagenes/pueblo2.jpg" class="d-block w-100" alt="Imagen 2" />
+          </div>
+          <div class="carousel-item">
+            <img src="/imagenes/pueblo3.jpg" class="d-block w-100" alt="Imagen 3" />
+          </div>
+          <div class="carousel-item">
+            <img src="/imagenes/pueblo4.jpg" class="d-block w-100" alt="Imagen 4" />
+          </div>
+          <div class="carousel-item">
+            <img src="/imagenes/pueblo5.jpg" class="d-block w-100" alt="Imagen 5" />
+          </div>
+          <div class="carousel-item">
+            <img src="/imagenes/pueblo6.jpg" class="d-block w-100" alt="Imagen 6" />
+          </div>
+          <div class="carousel-item">
+            <img src="/imagenes/pueblo7.jpg" class="d-block w-100" alt="Imagen 7" />
+          </div>
+          <div class="carousel-item">
+            <img src="/imagenes/pueblo8.jpg" class="d-block w-100" alt="Imagen 8" />
+          </div>
+        </div>
+        <button id="prevBtn" class="carousel-control-prev" type="button">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button id="nextBtn" class="carousel-control-next" type="button">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    `;
+
+    // Incluir el script de Bootstrap
+    const scriptBootstrap = document.createElement('script');
+    scriptBootstrap.setAttribute('src', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js');
+    scriptBootstrap.onload = () => {
+      // Inicializar el carousel
+      const carouselElement = shadow.querySelector('#carouselExample');
+      const carousel = new bootstrap.Carousel(carouselElement, {
+        ride: 'carousel'
+      });
+
+      // Agregar event listeners a los botones
+      const prevBtn = shadow.querySelector('#prevBtn');
+      const nextBtn = shadow.querySelector('#nextBtn');
+
+      prevBtn.addEventListener('click', () => {
+        carousel.prev();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        carousel.next();
+      });
+    };
+    shadow.appendChild(scriptBootstrap);
+  </script>
+</body>
+</html>
