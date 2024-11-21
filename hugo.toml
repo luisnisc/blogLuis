@@ -26,5 +26,5 @@ theme = 'congo'
 
   [[menu.main]]
     name = "Contenido de Programación"
-    url = "/conteido_programacion/"
+    url = "/contenido_programacion/"
     weight = 5
