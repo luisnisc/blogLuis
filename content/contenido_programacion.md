@@ -2,23 +2,8 @@
 date = '2024-11-20T16:46:48+01:00'
 draft = false
 title = 'Contenido Programación'
+weight = 4
 +++
-
-<nav style="background-color: #333; padding: 10px;">
-  <ul style="list-style: none; display: flex; justify-content: center; margin: 0; padding: 0;">
-    <li style="margin-right: 20px;"><a href="#introducción" style="color: white; text-decoration: none;">Introducción</a></li>
-    <li style="margin-right: 20px;"><a href="#fundamentos-de-javascript" style="color: white; text-decoration: none;">Fundamentos</a></li>
-    <li style="margin-right: 20px;"><a href="#funciones" style="color: white; text-decoration: none;">Funciones</a></li>
-    <li style="margin-right: 20px;"><a href="#arrays-y-objetos" style="color: white; text-decoration: none;">Arrays y Objetos</a></li>
-    <li style="margin-right: 20px;"><a href="#programación-orientada-a-objetos-poo" style="color: white; text-decoration: none;">POO</a></li>
-    <li style="margin-right: 20px;"><a href="#manipulación-del-dom" style="color: white; text-decoration: none;">Manipulación del DOM</a></li>
-    <li style="margin-right: 20px;"><a href="#asincronía-y-promesas" style="color: white; text-decoration: none;">Asincronía y Promesas</a></li>
-    <li style="margin-right: 20px;"><a href="#apis-del-navegador" style="color: white; text-decoration: none;">APIs del Navegador</a></li>
-    <li style="margin-right: 20px;"><a href="#buenas-prácticas-y-herramientas" style="color: white; text-decoration: none;">Buenas Prácticas</a></li>
-    <li style="margin-right: 20px;"><a href="#recursos-adicionales" style="color: white; text-decoration: none;">Recursos</a></li>
-    <li><a href="#conclusión" style="color: white; text-decoration: none;">Conclusión</a></li>
-  </ul>
-</nav>
 
 # JavaScript
 
