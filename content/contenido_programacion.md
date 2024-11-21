@@ -4,6 +4,22 @@ draft = false
 title = 'Contenido Programación'
 +++
 
+<nav style="background-color: #333; padding: 10px;">
+  <ul style="list-style: none; display: flex; justify-content: center; margin: 0; padding: 0;">
+    <li style="margin-right: 20px;"><a href="#introducción" style="color: white; text-decoration: none;">Introducción</a></li>
+    <li style="margin-right: 20px;"><a href="#fundamentos-de-javascript" style="color: white; text-decoration: none;">Fundamentos</a></li>
+    <li style="margin-right: 20px;"><a href="#funciones" style="color: white; text-decoration: none;">Funciones</a></li>
+    <li style="margin-right: 20px;"><a href="#arrays-y-objetos" style="color: white; text-decoration: none;">Arrays y Objetos</a></li>
+    <li style="margin-right: 20px;"><a href="#programación-orientada-a-objetos-poo" style="color: white; text-decoration: none;">POO</a></li>
+    <li style="margin-right: 20px;"><a href="#manipulación-del-dom" style="color: white; text-decoration: none;">Manipulación del DOM</a></li>
+    <li style="margin-right: 20px;"><a href="#asincronía-y-promesas" style="color: white; text-decoration: none;">Asincronía y Promesas</a></li>
+    <li style="margin-right: 20px;"><a href="#apis-del-navegador" style="color: white; text-decoration: none;">APIs del Navegador</a></li>
+    <li style="margin-right: 20px;"><a href="#buenas-prácticas-y-herramientas" style="color: white; text-decoration: none;">Buenas Prácticas</a></li>
+    <li style="margin-right: 20px;"><a href="#recursos-adicionales" style="color: white; text-decoration: none;">Recursos</a></li>
+    <li><a href="#conclusión" style="color: white; text-decoration: none;">Conclusión</a></li>
+  </ul>
+</nav>
+
 # JavaScript
 
 ## **Introducción**
@@ -11,10 +27,6 @@ title = 'Contenido Programación'
 ### **¿Qué es JavaScript?**
 
 JavaScript es un lenguaje de programación interpretado, orientado a objetos y débilmente tipado. Se utiliza principalmente para añadir interactividad y dinamismo a las páginas web, permitiendo a los desarrolladores crear experiencias más enriquecedoras para los usuarios.
-
-### **Historia y Evolución del Lenguaje**
-
-Creado en 1995 por Brendan Eich mientras trabajaba en Netscape, JavaScript ha evolucionado significativamente. Inicialmente diseñado para agregar funciones a los navegadores web, ahora es utilizado también en el backend con tecnologías como Node.js.
 
 ### **¿Por qué Aprender JavaScript?**
 
@@ -25,8 +37,6 @@ Creado en 1995 por Brendan Eich mientras trabajaba en Netscape, JavaScript ha ev
 ## **Fundamentos de JavaScript**
 
 ### **Sintaxis Básica**
-
-La sintaxis de JavaScript es similar a otros lenguajes como C o Java.
 
 ```javascript
 // Esto es un comentario
@@ -201,6 +211,86 @@ let boton = document.getElementById('miBoton');
 boton.addEventListener('click', function() {
   alert('¡Botón presionado!');
 });
+```
+
+#### **Modificación de Contenido y Estilo del DOM**
+```javascript
+titulo.textContent = 'Nuevo Título';
+titulo.style.color = 'red';
+```
+
+### **Asincronía y Promesas**
+
+#### **Callbacks**
+```javascript
+function descargarArchivo(url, callback) {
+  setTimeout(function() {
+    console.log('Archivo descargado de ' + url);
+    callback();
+  }, 2000);
+}
+
+descargarArchivo('http://ejemplo.com/archivo', function() {
+  console.log('Descarga completa');
+});
+```
+
+#### **Promesas**
+```javascript
+function promesaEjemplo() {
+  return new Promise(function(resolve, reject) {
+    let exito = true;
+    if (exito) {
+      resolve('Operación exitosa');
+    } else {
+      reject('Error en la operación');
+    }
+  });
+}
+
+promesaEjemplo()
+  .then(function(mensaje) {
+    console.log(mensaje);
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
+
+#### **Async/Await**
+```javascript
+async function obtenerUsuario() {
+  try {
+    let respuesta = await fetch('https://api.ejemplo.com/usuario');
+    let datos = await respuesta.json();
+    console.log(datos);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+obtenerUsuario();
+```
+
+### **APIs del Navegador**
+
+#### **Fetch API**
+```javascript
+fetch('https://api.ejemplo.com/datos')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+```
+
+#### **LocalStorage y SessionStorage**
+```javascript
+// LocalStorage
+localStorage.setItem('usuario', 'Ana');
+let usuario = localStorage.getItem('usuario');
+
+// SessionStorage
+sessionStorage.setItem('token', 'ABC123');
+let token = sessionStorage.getItem('token');
 ```
 
 
