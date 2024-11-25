@@ -3,7 +3,7 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages  # Asegúrate de usar la rama correcta
+      - master  # Cambia a la rama principal que utilizas
 
 jobs:
   build:
