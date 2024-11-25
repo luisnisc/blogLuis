@@ -205,3 +205,25 @@ Puedes insertar videos de YouTube utilizando el shortcode `youtube`.
 
 Y se verá así:
 {{<youtube dQw4w9WgXcQ >}}
+
+## Diagramas y Gráficos
+
+Se pueden hacer diagramas y graficos mediante el uso de mermaid.
+  
+  ```mermaid
+  graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+  ```
+    
+  ```mermaid
+  sequenceDiagram
+    Alice ->> Bob: Hola Bob, ¿cómo estás?
+    Bob-->>John: ¿Y tú John?
+    Bob--x Alice: Estoy bien gracias!
+    Bob-x John: Estoy bien gracias!
+    Note right of John: Bob piensa mucho
+    John-->Bob: ¡Excelente!
+  ```
