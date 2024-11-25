@@ -2,7 +2,7 @@
 date = '2024-11-20T16:46:47+01:00'
 draft = false
 title = 'Explicación de Markdown'
-weight = 1
+weight = 4
 +++
 
 # Guía Completa de Markdown
@@ -208,22 +208,26 @@ Y se verá así:
 
 ## Diagramas y Gráficos
 
-Se pueden hacer diagramas y graficos mediante el uso de mermaid.
-  
-  ```mermaid
-  graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-  ```
-    
-  ```mermaid
-  sequenceDiagram
-    Alice ->> Bob: Hola Bob, ¿cómo estás?
-    Bob-->>John: ¿Y tú John?
-    Bob--x Alice: Estoy bien gracias!
-    Bob-x John: Estoy bien gracias!
-    Note right of John: Bob piensa mucho
-    John-->Bob: ¡Excelente!
-  ```
+Puedes crear diagramas y gráficos mediante el uso de Mermaid y un shortcode en Hugo.
+
+### Diagrama de Flujo
+
+{{< mermaid >}}
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+{{< /mermaid >}}
+
+### Diagrama de Secuencia
+
+{{< mermaid >}}
+sequenceDiagram
+  Alice->>Bob: Hola Bob, ¿cómo estás?
+  Bob-->>John: ¿Y tú John?
+  Bob--xAlice: Estoy bien, gracias!
+  Bob-xJohn: Estoy bien, gracias!
+  Note right of John: Bob piensa mucho
+  John-->Bob: ¡Excelente!
+{{< /mermaid >}}

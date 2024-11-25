@@ -2,7 +2,7 @@
 date = '2024-11-20T16:46:48+01:00'
 draft = false
 title = 'Contenido Programación'
-weight = 4
+weight = 1
 +++
 
 # JavaScript

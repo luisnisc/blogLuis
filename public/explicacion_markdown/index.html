@@ -118,7 +118,7 @@ Encabezados #Los encabezados permiten estructurar el contenido jeráquicamente. 
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "575"
+    "wordCount": "583"
   }
   </script>
     <script type="application/ld+json">
@@ -146,6 +146,17 @@ Encabezados #Los encabezados permiten estructurar el contenido jeráquicamente. 
   
   
   
+
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/mermaid.bundle.9ae619872ed1c05511489ace9e35db7832388bf4ddcda2b41ac2b6f2b229076dcf5ee194636b79686493a8c13ca34ce83ca25a834d181df264f9654bda47ca07.js"
+    integrity="sha512-muYZhy7RwFURSJrOnjXbeDI4i/TdzaK0GsK28rIpB23PXuGUY2t5aGSTqME8o0zoPKJag00YHfJk&#43;WVL2kfKBw=="
+  ></script>
 
 
 
@@ -502,20 +513,38 @@ Encabezados #Los encabezados permiten estructurar el contenido jeráquicamente. 
       ></iframe>
     </div>
 </p>
-<h2 id="diagramas-y-gráficos" class="relative group">Diagramas y Gráficos <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#diagramas-y-gr%c3%a1ficos" aria-label="Anchor">#</a></span></h2><p>Se pueden hacer diagramas y graficos mediante el uso de mermaid.</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TD;
-  A--&gt;B;
-  A--&gt;C;
-  B--&gt;D;
-  C--&gt;D;
-</code></pre><pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sequenceDiagram
-  Alice -&gt;&gt; Bob: Hola Bob, ¿cómo estás?
-  Bob--&gt;&gt;John: ¿Y tú John?
-  Bob--x Alice: Estoy bien gracias!
-  Bob-x John: Estoy bien gracias!
+<h2 id="diagramas-y-gráficos" class="relative group">Diagramas y Gráficos <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#diagramas-y-gr%c3%a1ficos" aria-label="Anchor">#</a></span></h2><p>Puedes crear diagramas y gráficos mediante el uso de Mermaid y un shortcode en Hugo.</p>
+<h3 id="diagrama-de-flujo" class="relative group">Diagrama de Flujo <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#diagrama-de-flujo" aria-label="Anchor">#</a></span></h3><script src="https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid">
+
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+
+</div>
+<h3 id="diagrama-de-secuencia" class="relative group">Diagrama de Secuencia <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#diagrama-de-secuencia" aria-label="Anchor">#</a></span></h3><script src="https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid">
+
+sequenceDiagram
+  Alice->>Bob: Hola Bob, ¿cómo estás?
+  Bob-->>John: ¿Y tú John?
+  Bob--xAlice: Estoy bien, gracias!
+  Bob-xJohn: Estoy bien, gracias!
   Note right of John: Bob piensa mucho
-  John--&gt;Bob: ¡Excelente!
-</code></pre>
+  John-->Bob: ¡Excelente!
+
+</div>
+
       </div>
     </section>
     <footer class="max-w-prose pt-8 print:hidden">
@@ -545,12 +574,10 @@ Encabezados #Los encabezados permiten estructurar el contenido jeráquicamente. 
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="group flex" href="/galeria_imagenes/">
-              <span
-                class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
-                ><span class="ltr:inline rtl:hidden">&larr;</span
-                ><span class="ltr:hidden rtl:inline">&rarr;</span></span
-              >
+        </span>
+        <span>
+          
+            <a class="group flex text-right" href="/galeria_imagenes/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
@@ -562,10 +589,12 @@ Encabezados #Los encabezados permiten estructurar el contenido jeráquicamente. 
                   
                 </span>
               </span>
+              <span
+                class="ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[-2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&rarr;</span
+                ><span class="ltr:hidden rtl:inline">&larr;</span></span
+              >
             </a>
-          
-        </span>
-        <span>
           
         </span>
       </div>
