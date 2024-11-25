@@ -3,7 +3,7 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - master  # Cambia a la rama principal que utilizas
+      - master
 
 jobs:
   build:
@@ -36,6 +36,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public  # Carpeta con los archivos generados
+          publish_dir: ./public 
           publish_branch: gh-pages
           force_orphan: true
