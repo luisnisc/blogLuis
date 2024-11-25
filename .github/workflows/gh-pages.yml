@@ -3,7 +3,7 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - master  
+      - gh-pages  # Asegúrate de usar la rama correcta
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: recursive 
+          submodules: recursive
 
       - name: Configure Git
         run: |
@@ -36,6 +36,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./public  # Carpeta con los archivos generados
           publish_branch: gh-pages
           force_orphan: true
