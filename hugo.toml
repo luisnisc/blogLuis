@@ -12,12 +12,12 @@ theme = 'congo'
 
   [[menu.main]]
     name = "Markdown"
-    url = "explicacion_markdown/"
+    url = "/explicacion_markdown/"
     weight = 2
 
   [[menu.main]]
     name = "Galería de Imágenes"
-    url = "galeria_imagenes/"
+    url = "/galeria_imagenes/"
     weight = 3
 
   [[menu.main]]
@@ -27,5 +27,5 @@ theme = 'congo'
 
   [[menu.main]]
     name = "Contenido de Programación"
-    url = "contenido_programacion/"
+    url = "/contenido_programacion/"
     weight = 5
