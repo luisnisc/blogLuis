@@ -2,8 +2,7 @@ baseURL = 'https://luisnisc.github.io/blogLuis/'
 languageCode = 'en-us'
 title = 'blogLuis'
 theme = 'congo'
-relativeURLs = true
-canonifyURLs = true
+
 
 [menu]
   [[menu.main]]
