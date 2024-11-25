@@ -4,7 +4,7 @@ draft = false
 title = 'Landing Page'
 +++
 
-{{< figure src="/imagenes/foto_Luis.png" title="Descripción de la imagen" class="rounded-full w-24 h-24" >}}
+{{< figure src="blogLuis/imagenes/foto_Luis.png" title="Descripción de la imagen" class="rounded-full w-24 h-24" >}}
 
 ## Bienvenido a mi Página Web
 
