@@ -224,10 +224,14 @@ graph TD;
 
 {{< mermaid >}}
 sequenceDiagram
-  Alice->>Bob: Hola Bob, ¿cómo estás?
-  Bob-->>John: ¿Y tú John?
-  Bob--xAlice: Estoy bien, gracias!
-  Bob-xJohn: Estoy bien, gracias!
-  Note right of John: Bob piensa mucho
-  John-->Bob: ¡Excelente!
+  participant Cliente
+  participant Servidor
+  participant BaseDeDatos
+
+  Cliente->>Servidor: Solicitud de datos
+  Servidor->>BaseDeDatos: Consulta de datos
+  BaseDeDatos-->>Servidor: Datos encontrados
+  Servidor-->>Cliente: Respuesta con datos
+  Cliente->>Servidor: Confirmación de recepción
+  Servidor-->>BaseDeDatos: Actualización de estado
 {{< /mermaid >}}
